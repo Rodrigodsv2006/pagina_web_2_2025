@@ -1,0 +1,157 @@
+:root {
+    --primario: #2c3e50;
+    --secundario: #3498db;
+    --fondo: #f0f2f5;
+    --blanco: #ffffff;
+    --texto: #444;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    color: var(--texto);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: var(--primario);
+    padding: 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    padding: 20px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: var(--secundario);
+}
+
+nav a.active {
+    background-color: var(--secundario);
+    border-bottom: 4px solid #fff;
+}
+
+main {
+    flex: 1 0 auto;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    width: 90%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--primario);
+    font-size: 2.5rem;
+    border-bottom: 3px solid var(--secundario);
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+}
+
+.card {
+    background: #fcfcfc;
+    border-left: 6px solid var(--secundario);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.perfil-horizontal, .deporte-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.perfil-info, .deporte-texto {
+    flex: 1;
+}
+
+.perfil-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.deporte-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.deporte-item:last-child {
+    border-bottom: none;
+}
+
+.deporte-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid #eee;
+}
+
+footer {
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+    border-top: 4px solid var(--secundario);
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .perfil-horizontal, .deporte-item {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .perfil-foto img, .deporte-img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+}
